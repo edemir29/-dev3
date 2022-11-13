@@ -1,0 +1,54 @@
+<mvc:View controllerName="com.homework2.homework2.controller.InitialView2"
+    xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.f"
+    xmlns:card="sap.f.cards">
+
+ <Page id="page" title="Main" class="sapUiContentPadding">
+        <content>
+            <!-- Cards -->
+            <l:Grid containerQuery="true" id="cardsGrid" defaultSpan="XL2 L4 M6 S12" class="gridProgressIndicator" hSpacing="1" content="{ path: '/Employees' }">
+                <f:Card class="sapUiMediumMargin">
+                    <f:header>
+                        <card:Header
+                        title="{FirstName} {LastName} - {EmployeeID}"
+                        iconSrc="{ path:'Photo', formatter: '.convertImagePath'}"
+                        iconDisplayShape="Circle"/>
+                        
+                    </f:header>
+                    <f:content>
+                        <VBox
+                        height="115px"
+                        class="sapUiSmallMargin">
+                            <HBox justifyContent="SpaceBetween">
+							<Title text="Country" wrapping="true" />
+							<Label text="{Country}" wrapping="true" />
+                            </HBox>
+                            <HBox justifyContent="SpaceBetween">
+							<Title text="Reports To" wrapping="true" />
+							<Label text="{ReportsTo}" wrapping="true" />
+                            </HBox>
+                           
+                            <HBox justifyContent="End">
+							<!-- <Title text="Reports To" wrapping="true" /> -->
+							<Button id="employeeQuickView" text="Quick Card" press="handleLinkPress" />
+                            </HBox>
+                            
+                            <HBox justifyContent="SpaceBetween">
+							<Title text="Direct Reports" wrapping="true" />
+							<!-- <Label text="{ReportsTo}" wrapping="true" /> -->
+                            </HBox>
+                            <HBox justifyContent="SpaceBetween">
+							<Title text="Age" wrapping="true" />
+							<Label text="{ path:'BirthDate', formatter: '.calculateAge'}" wrapping="true" />
+                            </HBox>
+                        </VBox>
+                    </f:content>
+                </f:Card>
+            </l:Grid>
+        </content>
+    </Page>
+</mvc:View>
+
